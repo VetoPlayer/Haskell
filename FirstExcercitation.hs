@@ -108,11 +108,12 @@ fringe (Branch left right) = fringe left ++ fringe right
 
 myMap:: (a -> b) -> [a] -> [b]
 myMap f [] = []
-myMap f (x:xs) =         (f x) : myMap f xs
+myMap f (x:xs) = (f x) : myMap f xs
 
 --myMap (\x -> 1 + x) [1,2,3]
 
---TODO: Make the myMap partial computation using the currying thing
+--It's possible to make the myMap partial computation, with for example myMap (+) [1,2,3] : What you get is a closure.
+-- TODO: Find a way to print the closure
 
 -- Myfilter
 myFilter :: (a -> Bool) -> [a] -> [a]
@@ -244,50 +245,5 @@ instance Ord RPS where
 
 --Since RPS is now an instance of Ord it is possible to call the quicksort function over it: quicksort [Paper,Rock, Rock, Scissors]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
- 
 
 
