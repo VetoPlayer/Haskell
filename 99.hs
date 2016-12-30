@@ -103,7 +103,22 @@ isPalindrome list
 -- It can be easily done with a simple fold
 
 compress:: Eq a => [a] -> [a]
-compress (x : xs) = foldr (\ x y -> ) -- omg i would really like to have an if inside my \ function!!
+compress lst = foldr isConsecutiveEqual [] lst  
+
+
+
+
+
+-- omg i would really like to have an if inside my \ function!!
+-- I think the only solution in this case is to do define a new proper function and use it
+
+isConsecutiveEqual:: Eq a => a -> a -> Bool
+isConsecutiveEqual x y | x == y = True
+                       | otherwise = False
+
+-- what about using concatMap??????? TODO
+
+
 
 
 
