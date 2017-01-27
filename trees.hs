@@ -65,6 +65,7 @@ tconc r l = Node r l
 tconcat t= tfoldr tconc Empty t
 
 --3] How to apply a function over the trees and the concatenate the results
+-- t in this case will be used as a tree of functions.
 tconcatmap f t = tconcat (fmap f t)
 
 

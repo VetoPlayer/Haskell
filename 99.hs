@@ -1,11 +1,7 @@
 -- 99 Problems done by myself
 
 
--- 1] Find the last element of a list
-mylast:: [a] -> a
-mylast [] = error "empty list"
-mylast [x] = x
-mylast (x: xs) = mylast xs
+
 
 
 -- Tail recursive style version: Stupid and perverse way to do it   
@@ -13,15 +9,7 @@ mylast (x: xs) = mylast xs
 
 
 
--- 2] Find the last but one element of a list
 
--- use if!!
-
-
-onebutlast:: [a] -> a
-onebutlast [] = error "empty list"
-onebutlast (x : [xs]) = x
-onebutlast (x : xs) = onebutlast xs 
                           
 
 
@@ -43,15 +31,6 @@ lasthelper (x : xs) accum = lasthelper xs x
 
 
 
-
-
-
--- Boolean function OGM
-
-boolean:: Bool -> String
-boolean input = "ciao"
-
-
 -- 3] Find the k-th element in a list. The first element in the list is number #1.
 
 myfind:: [a] -> Int -> a
@@ -64,6 +43,14 @@ myfind (x : xs) counter = myfind xs (counter - 1)
 mylength:: [a] -> Int
 mylength [] = 0
 mylength (x : xs) = 1 + (mylength xs)
+
+
+-- foldl implentation:
+
+myfoldlength:: [a] -> Int
+myfoldlength l= foldl (\x y -> x + 1) 0 l
+
+
 
 -- 5] Reverse a list
 
